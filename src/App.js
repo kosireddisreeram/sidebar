@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import "./App.css";
+import "./Side.css";
 import SideMenu, { menuItems } from "./components/SideMenu";
 import { BrowserRouter as Router,  Route } from "react-router-dom";
 import { useState } from "react";

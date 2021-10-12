@@ -1,6 +1,7 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
+/* eslint-disable no-unused-vars */
+import React, {  useState } from "react";
 import MenuItem from "./MenuItem";
+
 export const menuItems = [
   {name: "Bowls",exact: true,to: "/"},
   { name: "Wraps", to: `/design`,  },
@@ -11,20 +12,6 @@ export const menuItems = [
 ];
 const SideMenu = (props) => {
   const [inactive, setInactive] = useState(false);
-useEffect(() => {
-    let menuItems = document.querySelectorAll(".menu-item");
-    menuItems.forEach((el) => {
-      el.addEventListener("click", (e) => { 
-        const next = el.nextElementSibling;
-        menuItems.forEach((el) => el.classList.remove("active"));
-        el.classList.toggle("active");
-        console.log(next);
-        if (next !== null) {
-          next.classList.toggle("active");
-        }
-      });
-    });
-  }, []);
 return (
     <div className={`side-menu ${inactive ? "inactive" : ""}`}>
       <div className="main-menu">
@@ -35,17 +22,11 @@ return (
               name={menuItem.name}
               exact={menuItem.exact}
               to={menuItem.to}
-              onClick={(e) => {
-                if (inactive) {
-                  setInactive(false);
-                }
-              }}
-            />
+    />
           ))}
           </ul>
           </div>
 </div>
   );
 };
-
 export default SideMenu;
